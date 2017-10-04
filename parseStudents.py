@@ -62,8 +62,8 @@ class Parser:
 
     def run(self):
         #self.printRows()
-        #self.getPCNs()
-        #self.getStudNrs()
+        self.getPCNs()
+        self.getStudNrs()
         self.getMaxMinStudNr()
 
 

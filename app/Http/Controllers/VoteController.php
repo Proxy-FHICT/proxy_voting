@@ -109,16 +109,19 @@ class VoteController extends Controller {
     $votes = $ses->retrieveValue($request,'vote_records');
     //print_r($votes);
 
+    // save student data first
+    $stud = $ses->retrieveValue($request,'student_record');
+    // echo ($stud);
+    $stud->save();
+    
     if(count($votes)>0){
+     
       foreach($votes as $v)
       {
         //echo '...saving: '.$v['vote'];
         $v['vote']->save();
       }
-      // save student data also
-      $stud = $ses->retrieveValue($request,'student_record');
-      // echo ($stud);
-      $stud->save();
+      
       // flag finished
       $ses->putValue($request, 'fin', true);
       // $ses->deleteKey($request, 'student_record');

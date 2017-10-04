@@ -53,13 +53,16 @@ class QualificationController extends Controller {
 
   /**
    * Display the specified resource.
-   *
+   * @param $request
    * @param  int  $id
    * @return Response
    */
-  public function show($id)
+  public function show(Request $request, $id)
   {
     // echo $id;
+    $ses = new SessionController;
+    $ses->putValue($request, 'qual_nr',$id+1);
+
     $qualification = Qualification::find($id);
     $teachers = Teacher::orderBy('name','asc')->get();
     // echo $qualification;

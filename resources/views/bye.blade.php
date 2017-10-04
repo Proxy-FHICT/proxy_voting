@@ -10,6 +10,9 @@
 @section('subtitle')
     <!--2017-->
     See you at the P-Certificate ceremony!
+    <br/>
+    <br/>
+    October 10, 2017.
     <!--The winner is to be announced at the P-Certificate ceremony-->
 @endsection
 
